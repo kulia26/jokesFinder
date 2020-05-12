@@ -1,0 +1,414 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+/* Left and right section */
+.wrap, aside{
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* Left section */
+.wrap{
+  max-width: 680px;
+  width: 47.22%;
+  padding-right: 43.05%;
+  padding-left: 9.72%;
+}
+
+/* MSI 2020 */
+.wrap header h1{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  margin-top: 40px;
+}
+
+/* Hey! */
+.wrap main h2:first-child{
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 44px;
+  margin-top: 78px;
+}
+
+/* Get a joke */
+button.getJoke{
+  width: 152px;
+  height: 42px;
+  background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+button.getJoke:active{
+  background: linear-gradient(92.01deg, #7291FF 0% , #8EA7FF 100%);
+}
+
+/* Let’s try to find a joke for you: */
+.wrap main form > fieldset > legend{
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 44px;
+  margin-bottom: 43px;
+}
+
+.wrap main form > fieldset label {
+  font-size: 18px;
+  line-height: 26px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Select mode (random, from categories, search*/
+.wrap main form label{
+  position: relative;
+}
+
+.wrap main form label span.radio{
+  margin-left: 35px;
+  margin-bottom: 10px;
+}
+
+.wrap span.radio::before, .wrap span.radio::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.wrap label:hover{
+  cursor: pointer;
+}
+
+.wrap span.radio::before{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ABABAB;
+  box-sizing: border-box;
+  border-radius: 50px;
+  z-index: -1;
+  cursor: pointer;
+}
+
+.wrap span.radio::after{
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: white;
+  transition: width 0.25s, height 0.25s, background-color .25s;
+  z-index: 1;
+}
+
+.wrap input[type="radio"]:checked + .radio::after{
+  background: #333333;
+  left: 5px;
+}
+
+.wrap input[type="radio"]:checked + .radio::before{
+  border: 2px solid #333333;
+  transition: border-color .25s;
+}
+
+.wrap input[type="radio"]{
+    display: none;
+}
+
+/* From categories */
+
+.wrap .categories > label > span.radio::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+}
+
+.wrap .categories > label > span.radio::before{
+  width: 100%;
+  border: 2px solid #F8F8F8;
+  height: 28px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+.wrap .categories > label > input,
+ .wrap .categories > label > span.radio::after{
+  display: none;
+}
+
+.wrap fieldset.categories > label > span.radio{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ABABAB;
+  margin-left: 0;
+}
+
+.wrap fieldset.categories{
+  margin-bottom: 20px;
+}
+
+.wrap fieldset.categories > label{
+  padding: 6px 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.wrap fieldset.categories > label input[type="radio"]:checked + .radio::before{
+  background: #F8F8F8;
+  border: 2px solid #F8F8F8;
+  box-sizing: border-box;
+  border-radius: 6px;
+  transition:background-color .25s;
+}
+
+.wrap fieldset.categories > label input[type="radio"]:checked + .radio{
+  color: #333333;
+  transition: ease-in color .25s;
+}
+
+.wrap fieldset.categories > legend{
+  margin-bottom: 10px;
+}
+
+.wrap #search-field{
+  max-width: 680px;
+  width: 100%;
+  height: 42px;
+  border: 2px solid #333333;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  padding-left: 15px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.wrap #search-field::-webkit-input-placeholder{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ABABAB;
+}
+
+.wrap #search-field::-webkit-search-cancel-button{
+  position:relative;
+  right:5px;  
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius:10px;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      #ABABAB,
+      #ABABAB 2px,
+      transparent 2px,
+      transparent 13px /* determines size */
+    ), repeating-linear-gradient(
+      135deg,
+      #ABABAB,
+      #ABABAB 2px,
+      transparent 2px,
+      transparent 13px /* determines size */
+    );
+  transition: opacity 0.25s;
+}
+
+/* Jokes */
+
+main section article {
+  background: #F8F8F8;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-top: 67px;
+  padding-left: 100px;
+  padding-right: 5.88%;
+  padding-bottom: 45px;
+}
+
+section article span.message {
+  position: absolute;
+  left: 5.88%;
+  background: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main section article h2{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  color: #333333;
+}
+
+section article address{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  color: #ABABAB;
+  margin-bottom: 5px;
+}
+
+section article address a{
+  color: #8EA7FF;
+  text-decoration: none;
+}
+
+section article address a span{
+  text-decoration: underline;
+  margin-right: 3px;
+}
+
+section article p{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  color: #ABABAB;
+  margin-top: 28px;
+}
+
+section article p time{
+  font-weight: 500;
+}
+
+main section article mark{
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333333;
+  padding: 6px 20px;
+}
+/* heart */
+section article .like{
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+/* Favourite jokes */
+aside{
+  width: 33.33%;
+  background: #F8F8F8;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+aside h2{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ABABAB;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 8.33%;
+}
+
+aside section article{
+  background: #FFFFFF;
+  border: 1px solid #F8F8F8;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding-left: 20%;
+  padding-top: 47px;
+  padding-right: 5%;
+  position: relative;
+  margin: 0 8.33%;
+  margin-bottom: 20px;
+}
+
+aside section article h2{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  margin: 0;
+  margin-top: 5px;
+}
+
+aside section article span.message{
+  left: 5%;
+  background: #F8F8F8;
+}
+
+aside section article .like{
+  top: 20px;
+  right: 20px;
+}
+
+aside section article mark{
+  display: none;
+}
+
+aside section article p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
