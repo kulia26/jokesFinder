@@ -6,11 +6,22 @@
   <link rel="stylesheet" href="/reset.css">
   <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="animations.js"></script>
   <title>Document</title>
 </head>
-<body>
+<body class="blur-hide">
   <div class="wrap">
-    <header><h1>MSI 2020</h1></header>
+    <header><h1>MSI 2020</h1>
+    </header>
+    <input class="menu" type="checkbox" id="menu"/>
+    <div class="menu">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+      <h2>Favourite</h2>
+    </div>
+    
   <main>
     <h2>Hey!</h2>
     <form>
@@ -106,8 +117,11 @@
     </section>
   </main>
   </div>
-  <aside>
+  
+  <aside class="hide">
+
     <h2>Favourite</h2>
+  
     <section>
       <article>
         <span class="message">
