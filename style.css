@@ -3,7 +3,11 @@ body {
   font-style: normal;
   font-weight: normal;
   color: #333333;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
   height: 100vh;
@@ -14,7 +18,6 @@ body {
 .wrap,
 aside {
   overflow-y: scroll;
-  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
@@ -49,6 +52,7 @@ aside {
 button.getJoke {
   width: 152px;
   height: 42px;
+  background: -o-linear-gradient(357.99deg, #8EA7FF 0%, #7291FF 100%);
   background: linear-gradient(92.01deg, #8EA7FF 0%, #7291FF 100%);
   border-radius: 10px;
   font-weight: bold;
@@ -62,6 +66,7 @@ button.getJoke {
 }
 
 button.getJoke:active {
+  background: -o-linear-gradient(357.99deg, #7291FF 0%, #8EA7FF 100%);
   background: linear-gradient(92.01deg, #7291FF 0%, #8EA7FF 100%);
 }
 
@@ -108,6 +113,7 @@ button.getJoke:active {
   width: 20px;
   height: 20px;
   border: 2px solid #ABABAB;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 50px;
   z-index: -1;
@@ -120,6 +126,8 @@ button.getJoke:active {
   height: 10px;
   border-radius: 10px;
   background: white;
+  -webkit-transition: width 0.25s, height 0.25s, background-color .25s;
+  -o-transition: width 0.25s, height 0.25s, background-color .25s;
   transition: width 0.25s, height 0.25s, background-color .25s;
   z-index: 0;
 }
@@ -131,6 +139,8 @@ button.getJoke:active {
 
 .wrap input[type="radio"]:checked+.radio::before {
   border: 2px solid #333333;
+  -webkit-transition: border-color .25s;
+  -o-transition: border-color .25s;
   transition: border-color .25s;
 }
 
@@ -154,6 +164,7 @@ button.getJoke:active {
   width: 100%;
   border: 2px solid #F8F8F8;
   height: 28px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 6px;
   z-index: -1;
@@ -191,13 +202,18 @@ button.getJoke:active {
 .wrap fieldset.categories>label input[type="radio"]:checked+.radio::before {
   background: #F8F8F8;
   border: 2px solid #F8F8F8;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 6px;
+  -webkit-transition: background-color .25s;
+  -o-transition: background-color .25s;
   transition: background-color .25s;
 }
 
 .wrap fieldset.categories>label input[type="radio"]:checked+.radio {
   color: #333333;
+  -webkit-transition: ease-in color .25s;
+  -o-transition: ease-in color .25s;
   transition: ease-in color .25s;
 }
 
@@ -212,6 +228,7 @@ button.getJoke:active {
   width: 100%;
   height: 42px;
   border: 2px solid #333333;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 10px;
   font-family: inherit;
@@ -249,6 +266,7 @@ button.getJoke:active {
       transparent 13px
       /* determines size */
     );
+  -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 
@@ -271,10 +289,17 @@ section article span.message {
   background: #FFFFFF;
   width: 40px;
   height: 40px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -326,6 +351,7 @@ main section article mark {
   color: #333333;
   padding: 6px 20px;
   height: 24px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -363,7 +389,9 @@ aside h2 {
 aside section article {
   background: #FFFFFF;
   border: 1px solid #F8F8F8;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding-left: 20%;
@@ -400,16 +428,18 @@ aside section article p {
   margin-bottom: 20px;
 }
 
-.menu{
+.menu {
   display: none
 }
 
 @media screen and (max-width: 834px) {
-  
+
   /* blur */
   body::after {
     display: none;
     opacity: 1;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
     background: rgba(0, 0, 0, 0.35);
     display: block;
@@ -427,35 +457,51 @@ aside section article p {
     max-width: 480px;
     width: 100%;
     z-index: 3;
+    -webkit-transform: translate(480px, 0);
+    -ms-transform: translate(480px, 0);
     transform: translate(480px, 0);
   }
 
-  aside.show{
+  aside.show {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
     transform: translate(0, 0);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
   }
-  aside.hide{
+
+  aside.hide {
+    -webkit-transform: translate(480px, 0);
+    -ms-transform: translate(480px, 0);
     transform: translate(480px, 0);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
     transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
   }
 
   /* blur body on menu open */
-  body.blur-show::after{
+  body.blur-show::after {
     background: rgba(0, 0, 0, 0.35);
     opacity: 1;
     z-index: 1;
   }
-  body.blur-hide::after{
+
+  body.blur-hide::after {
     opacity: 0;
     background: transparent;
     z-index: -1;
   }
 
-  aside > h2{
+  aside>h2 {
     display: none;
   }
 
-  aside section{
+  aside section {
     padding-top: 88px;
   }
 
@@ -471,7 +517,7 @@ aside section article p {
   }
 
   /* Favourite button */
-  div.menu{
+  div.menu {
     display: block;
     position: absolute;
     top: 40px;
@@ -479,7 +525,7 @@ aside section article p {
     z-index: 5;
   }
 
-  input.menu{
+  input.menu {
     opacity: 0;
     -webkit-touch-callout: none;
     display: block;
@@ -494,7 +540,7 @@ aside section article p {
     z-index: 6;
   }
 
-  div.menu h2{
+  div.menu h2 {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
@@ -506,21 +552,23 @@ aside section article p {
     margin-left: 10px;
   }
 
-  div.menu h2, div.menu div{
+  div.menu h2,
+  div.menu div {
     float: left;
   }
 
-  div.menu div{
+  div.menu div {
     width: 28px;
     height: 28px;
     background: #333333;
     border-radius: 14px;
     padding-top: 10px;
     padding-bottom: 16px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
 
-  div.menu div span{
+  div.menu div span {
     width: 14px;
     height: 2px;
     display: block;
@@ -528,29 +576,59 @@ aside section article p {
     border-radius: 2px;
     margin: 0 auto;
     margin-bottom: 4px;
+    -webkit-transform: none;
+    -ms-transform: none;
     transform: none;
+    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   }
 
-  input.menu:checked~div.menu span:nth-child(1){
+  input.menu:checked~div.menu span:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
+    -ms-transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
     transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
+    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   }
 
-  input.menu:checked~div.menu span:nth-child(2){
-    transform:  rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
+  input.menu:checked~div.menu span:nth-child(2) {
+    -webkit-transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
+    -ms-transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
+    transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
+    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   }
 
-  .cross-first{
+  .cross-first {
+    -webkit-transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
+    -ms-transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
     transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
+    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   }
 
-  .cross-last{
-    transform:  rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
+  .cross-last {
+    -webkit-transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
+    -ms-transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
+    transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
+    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   }
 
-   
+
 }
