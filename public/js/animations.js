@@ -1,4 +1,5 @@
 const animate = () => {
+  //animate favourite aside 
   const menuInput = document.getElementById('menu');
   menuInput.addEventListener('change', (event)=>{
     const wrap = document.querySelector('.wrap');
@@ -13,7 +14,6 @@ const animate = () => {
       wrap.appendChild(menuInput)
       wrap.appendChild(button);
       menuInput.checked = true
-      console.log(menuInput.checked)
       setTimeout(()=>{
         menuInput.checked = false;
       }, 20)
@@ -23,7 +23,8 @@ const animate = () => {
     aside.classList.toggle('hide');
     document.body.classList.toggle('blur-show');
     document.body.classList.toggle('blur-hide');
-  })
+  });
+
 }
 
 window.onload = animate;

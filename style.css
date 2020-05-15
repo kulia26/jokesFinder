@@ -608,27 +608,6 @@ aside section article p {
     transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   }
 
-  .cross-first {
-    -webkit-transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
-    -ms-transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
-    transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
-    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-  }
-
-  .cross-last {
-    -webkit-transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
-    -ms-transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
-    transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
-    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-  }
 
 
 }

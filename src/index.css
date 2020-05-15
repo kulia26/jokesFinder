@@ -63,6 +63,7 @@ button.getJoke {
   margin-bottom: 40px;
   border: none;
   cursor: pointer;
+  float: left;
 }
 
 button.getJoke:active {
@@ -70,6 +71,24 @@ button.getJoke:active {
   background: linear-gradient(92.01deg, #7291FF 0%, #8EA7FF 100%);
 }
 
+#errorMessage{
+  opacity: 0;
+  max-height: 0;
+  display: block;
+  transition: all 0.25s;
+    font-size: 0.9em;
+    color: #ababab;
+    width: 100%;
+    float: left;
+    margin: 0;
+    width: 100%;
+}
+#errorMessage.show{
+  opacity: 1;
+  margin-top: -30px;
+  max-height: 20px;
+  transition: all 0.25s;
+}
 /* Let’s try to find a joke for you: */
 .wrap main form>fieldset>legend {
   font-weight: 500;
@@ -177,7 +196,7 @@ button.getJoke:active {
   display: none;
 }
 
-.wrap fieldset.categories>label>span.radio {
+.wrap fieldset.categories div.categories label>span.radio {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -187,19 +206,42 @@ button.getJoke:active {
   margin-left: 0;
 }
 
-.wrap fieldset.categories {
-  margin-bottom: 20px;
+
+
+
+
+.wrap div.categories.hide label{
+  cursor: default; 
 }
 
-.wrap fieldset.categories>label {
+.wrap div.categories.show input{
+  pointer-events: all;
+}
+.wrap div.categories.hide{
+  pointer-events:none;
+  margin-top: 0px;
+  max-height: 0px;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transition: max-height ease-out 0.55s, opacity 0.75s, transform 0.55s, margin-top 0.55s;
+}
+.wrap div.categories.show{
+  margin-bottom: 20px;
+  margin-top: 10px;
+  max-height: 800px;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: max-height ease-in 0.55s, opacity 0.55s, transform 0.55s, margin-top 0.55s;
+}
+
+.wrap fieldset.categories div.categories label {
   padding: 1px 15px;
-  cursor: pointer;
   margin-right: 10px;
   display: inline-block;
 
 }
 
-.wrap fieldset.categories>label input[type="radio"]:checked+.radio::before {
+.wrap fieldset.categories div.categories label input[type="radio"]:checked+.radio::before {
   background: #F8F8F8;
   border: 2px solid #F8F8F8;
   -webkit-box-sizing: border-box;
@@ -210,15 +252,11 @@ button.getJoke:active {
   transition: background-color .25s;
 }
 
-.wrap fieldset.categories>label input[type="radio"]:checked+.radio {
+.wrap fieldset.categories div.categories label input[type="radio"]:checked+.radio {
   color: #333333;
   -webkit-transition: ease-in color .25s;
   -o-transition: ease-in color .25s;
   transition: ease-in color .25s;
-}
-
-.wrap fieldset.categories>legend {
-  margin-bottom: 10px;
 }
 
 /* Search field */
@@ -239,6 +277,33 @@ button.getJoke:active {
   color: inherit;
   display: block;
   margin-top: 20px;
+  transition: max-height 0.55s, opacity 0.35s, transform 0.55s, margin-top 0.55s;
+}
+
+.wrap #search-field.hide{
+  margin-top: 0px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0.9);
+  max-height: 0px;
+  margin-top: -20px;
+  
+}
+.wrap #search-field.show{
+  max-height: 50px;
+  margin-top: 10px;
+  opacity: 1;
+  transform: scaleY(1);
+  max-height: 42px;
+}
+
+.wrap #search-field.hide{
+  pointer-events: none;
+  cursor: default;
+  
+}
+.wrap #search-field.show{
+  pointer-events: all;
 }
 
 .wrap #search-field::-webkit-input-placeholder {
@@ -324,6 +389,7 @@ section article address a {
 section article address a span {
   text-decoration: underline;
   margin-right: 3px;
+  margin-left: 3px;
 }
 
 section article p {
@@ -353,6 +419,10 @@ main section article mark {
   height: 24px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+main section article mark.hide{
+  display: none;
 }
 
 /* heart */
@@ -608,27 +678,6 @@ aside section article p {
     transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   }
 
-  .cross-first {
-    -webkit-transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
-    -ms-transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
-    transform: rotate(45deg) translate(2px, 2px) scale(1.2, 1.2);
-    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-  }
-
-  .cross-last {
-    -webkit-transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
-    -ms-transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
-    transform: rotate(-45deg) translate(2px, -2px) scale(1.2, 1.2);
-    -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    -o-transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-  }
-
+  
 
 }
