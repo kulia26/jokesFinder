@@ -1,6 +1,6 @@
 ![alt text](https://github.com/kulia26/jokesFinder/blob/master/chuck.png "Chuck Norris")
 
-You can find jokes at [githubpages](https://github.com/kulia26/jokesFinder).
+You can find jokes at [githubpages](https://kulia26.github.io/jokesFinder/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
