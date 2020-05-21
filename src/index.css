@@ -64,6 +64,7 @@ button.getJoke {
   border: none;
   cursor: pointer;
   float: left;
+  position: relative;
 }
 
 button.getJoke:active {
@@ -71,24 +72,42 @@ button.getJoke:active {
   background: linear-gradient(92.01deg, #7291FF 0%, #8EA7FF 100%);
 }
 
-#errorMessage{
+#chuck {
+  height: 72px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  opacity: 1;
+  transition: all 0.15s;
+}
+
+
+#chuck.hide {
+  opacity: 0;
+  height: 50px;
+  transition: all 1.25s;
+}
+
+#errorMessage {
   opacity: 0;
   max-height: 0;
   display: block;
   transition: all 0.25s;
-    font-size: 0.9em;
-    color: #ababab;
-    width: 100%;
-    float: left;
-    margin: 0;
-    width: 100%;
+  font-size: 0.9em;
+  color: #ababab;
+  width: 100%;
+  float: left;
+  margin: 0;
+  width: 100%;
 }
-#errorMessage.show{
+
+#errorMessage.show {
   opacity: 1;
   margin-top: -30px;
   max-height: 20px;
   transition: all 0.25s;
 }
+
 /* Let’s try to find a joke for you: */
 .wrap main form>fieldset>legend {
   font-weight: 500;
@@ -210,22 +229,24 @@ button.getJoke:active {
 
 
 
-.wrap div.categories.hide label{
-  cursor: default; 
+.wrap div.categories.hide label {
+  cursor: default;
 }
 
-.wrap div.categories.show input{
+.wrap div.categories.show input {
   pointer-events: all;
 }
-.wrap div.categories.hide{
-  pointer-events:none;
+
+.wrap div.categories.hide {
+  pointer-events: none;
   margin-top: 0px;
   max-height: 0px;
   opacity: 0;
   transform: scaleY(0.95);
   transition: max-height ease-out 0.55s, opacity 0.75s, transform 0.55s, margin-top 0.55s;
 }
-.wrap div.categories.show{
+
+.wrap div.categories.show {
   margin-bottom: 20px;
   margin-top: 10px;
   max-height: 800px;
@@ -277,34 +298,30 @@ button.getJoke:active {
   color: inherit;
   display: block;
   margin-top: 20px;
-  transition: max-height 0.55s, opacity 0.35s, transform 0.55s, margin-top 0.55s;
+  transition: max-height 0.75s, opacity 0.25s, transform 0.55s, margin-top 0.55s;
 }
 
-.wrap #search-field.hide{
+.wrap #search-field.hide {
   margin-top: 0px;
   overflow: hidden;
   opacity: 0;
   transform: scaleY(0.9);
   max-height: 0px;
   margin-top: -20px;
-  
+  pointer-events: none;
+  cursor: default;
+
 }
-.wrap #search-field.show{
+
+.wrap #search-field.show {
   max-height: 50px;
   margin-top: 10px;
   opacity: 1;
   transform: scaleY(1);
   max-height: 42px;
-}
-
-.wrap #search-field.hide{
-  pointer-events: none;
-  cursor: default;
-  
-}
-.wrap #search-field.show{
   pointer-events: all;
 }
+
 
 .wrap #search-field::-webkit-input-placeholder {
   color: #ABABAB;
@@ -346,6 +363,17 @@ main section article {
   padding-left: 100px;
   padding-right: 5.88%;
   padding-bottom: 45px;
+  transition: all 0.4s;
+  max-height: 600px;
+}
+
+
+main section article.hide {
+  max-height: 0;
+  margin-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
 }
 
 section article span.message {
@@ -421,7 +449,7 @@ main section article mark {
   box-sizing: border-box;
 }
 
-main section article mark.hide{
+main section article mark.hide {
   display: none;
 }
 
@@ -431,6 +459,20 @@ section article .like {
   position: absolute;
   top: 40px;
   right: 40px;
+}
+
+.like {
+  transition: opacity 0.25s;
+}
+
+.like.show {
+  opacity: 1;
+  z-index: 1;
+}
+
+.like.hide {
+  opacity: 0;
+  z-index: -1;
 }
 
 /* Favourite jokes (right section) */
@@ -470,6 +512,17 @@ aside section article {
   position: relative;
   margin: 0 8.33%;
   margin-bottom: 20px;
+  transition: all 0.4s;
+  opacity: 1;
+  max-height: 300px;
+}
+
+aside section article.hide {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s;
+
 }
 
 aside section article h2 {
@@ -678,6 +731,41 @@ aside section article p {
     transition: transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0), -webkit-transform 0.55s cubic-bezier(0.77, 0.2, 0.05, 1.0);
   }
 
-  
+}
+
+@media screen and (max-width: 576px) {
+  main section article {
+    padding-left: 24%;
+    padding-right: 20px;
+    padding-top: 47px;
+    padding-bottom: 0;
+  }
+
+  main section article mark {
+    left: 80px;
+    bottom: 20px;
+  }
+
+  section article p {
+    padding-bottom: 16px;
+  }
+
+  section article .like {
+    top: 20px;
+    right: 20px;
+  }
+
+  section article address {
+    min-width: 180px;
+  }
+
+  aside section article p {
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+
+  aside section article {
+    max-height: 600px;
+  }
 
 }
