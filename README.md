@@ -1,4 +1,4 @@
-![alt text](https://github.com/kulia26/jokesFinder/chick.png "Logo Title Text 1")
+![alt text](https://github.com/kulia26/jokesFinder/blob/master/chuck.png "Chuck Norris")
 
 You can find jokes at [githubpages](https://github.com/kulia26/jokesFinder).
 
