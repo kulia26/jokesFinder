@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40e7b047baea4ef3a410d40fb0735d45",
+    "revision": "1be7ddec419824f0348741cc0f77f2e3",
     "url": "https://kulia26.github.io/jokesFinder/index.html"
   },
   {
-    "revision": "937a4dd271f806359707",
+    "revision": "d4df7f0b21d912c8a24f",
     "url": "https://kulia26.github.io/jokesFinder/static/css/main.f4c50439.chunk.css"
   },
   {
-    "revision": "9d4cf8bbe316ac8d6111",
-    "url": "https://kulia26.github.io/jokesFinder/static/js/2.92f53eb9.chunk.js"
+    "revision": "c614b4b62295f33e76b0",
+    "url": "https://kulia26.github.io/jokesFinder/static/js/2.1769b71f.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "https://kulia26.github.io/jokesFinder/static/js/2.92f53eb9.chunk.js.LICENSE.txt"
+    "url": "https://kulia26.github.io/jokesFinder/static/js/2.1769b71f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "937a4dd271f806359707",
-    "url": "https://kulia26.github.io/jokesFinder/static/js/main.23708263.chunk.js"
+    "revision": "d4df7f0b21d912c8a24f",
+    "url": "https://kulia26.github.io/jokesFinder/static/js/main.4318d45e.chunk.js"
   },
   {
     "revision": "4826dbbd39107caf0775",
