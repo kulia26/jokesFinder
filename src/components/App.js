@@ -97,7 +97,7 @@ class App extends React.Component {
       const favourite = this.state.favourite.filter((j) => j.id !== jokeId);
       this.setState({ favourite, jokes });
       localStorage.setItem("favourite", JSON.stringify(favourite));
-    }, 400);
+    }, 450);
   };
 
   getRandomJoke = () => {
