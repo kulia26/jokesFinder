@@ -21,15 +21,19 @@ class Joke extends React.Component {
 
   calculateHours = (date) => {
     return Math.floor((new Date() - new Date(date)) / 1000 / 60 / 60);
-  }
+  };
 
   hasCategory = () => {
     return this.props.categories && this.props.categories.length;
-  }
+  };
 
   render() {
+    const className =
+      (this.props.className ? this.props.className : "") +
+      " " +
+      this.state.className;
     return (
-      <article className={this.props.className + " " + this.state.className}>
+      <article className={className}>
         <span className="message">
           <Message />
         </span>
