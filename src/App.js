@@ -21,14 +21,6 @@ class App extends React.Component {
       favourite,
     };
 
-    this.onModeChange = this.onModeChange.bind(this);
-    this.onCategorySelect = this.onCategorySelect.bind(this);
-    this.onSearchChange = this.onSearchChange.bind(this);
-    this.getJoke = this.getJoke.bind(this);
-    this.getUniqueCounterValue = this.getUniqueCounterValue.bind(this);
-    this.addToFavourite = this.addToFavourite.bind(this);
-    this.removeFromFavourite = this.removeFromFavourite.bind(this);
-    this.isJokeFavourite = this.isJokeFavourite.bind(this);
   }
 
   componentDidMount() {
@@ -63,30 +55,30 @@ class App extends React.Component {
       }, 3000);
     }
   }
-  onModeChange(event) {
+  onModeChange = (event) => {
     this.setState({ mode: event.target.value });
   }
 
-  onCategorySelect(event) {
+  onCategorySelect = (event) => {
     this.setState({ fromCategory: event.target.value });
   }
 
-  onSearchChange(event) {
+  onSearchChange = (event) => {
     this.setState({ query: event.target.value });
   }
 
-  getUniqueCounterValue() {
+  getUniqueCounterValue = () => {
     const value = this.state.counterForUniqueId + 1;
     this.setState({ counterForUniqueId: value });
     return value;
   }
 
-  isJokeFavourite(id) {
+  isJokeFavourite = (id) => {
     const find = this.state.favourite.filter((j) => j.id === id);
     return find.length !== 0;
   }
 
-  addToFavourite(jokeId) {
+  addToFavourite = (jokeId) => {
     const favourite = this.state.favourite;
     let joke = {};
     const jokes = this.state.jokes.map((j) => {
@@ -103,7 +95,7 @@ class App extends React.Component {
     localStorage.setItem("favourite", JSON.stringify(favourite));
   }
 
-  removeFromFavourite(jokeId) {
+  removeFromFavourite = (jokeId) => {
     const favourite = this.state.favourite.map((j) => {
       if (j.id === jokeId) {
         j.className = "hide";
@@ -128,7 +120,7 @@ class App extends React.Component {
     }, 400);
   }
 
-  getRandomJoke() {
+  getRandomJoke = () => {
     this.setState({ isLoaded: false });
     fetch("https://api.chucknorris.io/jokes/random")
       .then((res) => res.json())
@@ -145,7 +137,7 @@ class App extends React.Component {
       );
   }
 
-  getJokeFromCategory() {
+  getJokeFromCategory = () => {
     this.setState({ isLoaded: false });
     const category = this.state.fromCategory;
     fetch(
@@ -165,7 +157,7 @@ class App extends React.Component {
       );
   }
 
-  getJokeFromQuery() {
+  getJokeFromQuery = () => {
     if (this.state.query.length < 3 || this.state.query.length > 120) {
       this.setState({
         error: {
@@ -203,7 +195,7 @@ class App extends React.Component {
     }
   }
 
-  getJoke() {
+  getJoke = () => {
     if (this.state.mode === "random") {
       this.getRandomJoke();
     }

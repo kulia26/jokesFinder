@@ -9,11 +9,8 @@ class Joke extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasCategory: this.props.categories && this.props.categories.length,
       className: "hide",
     };
-    this.calculateHours = this.calculateHours.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
@@ -22,8 +19,12 @@ class Joke extends React.Component {
     }, 0);
   }
 
-  calculateHours(date) {
+  calculateHours = (date) => {
     return Math.floor((new Date() - new Date(date)) / 1000 / 60 / 60);
+  }
+
+  hasCategory = () => {
+    return this.props.categories && this.props.categories.length;
   }
 
   render() {
@@ -66,7 +67,7 @@ class Joke extends React.Component {
           </time>
         </p>
 
-        <mark className={this.state.hasCategory ? "show" : "hide"}>
+        <mark className={this.hasCategory() ? "show" : "hide"}>
           {this.props.categories[0]}
         </mark>
       </article>
