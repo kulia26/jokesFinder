@@ -1,8 +1,8 @@
 import React from "react";
-import { ReactComponent as Message } from "./message.svg";
-import { ReactComponent as LinkIcon } from "./link.svg";
-import { ReactComponent as Unliked } from "./unliked.svg";
-import { ReactComponent as Liked } from "./liked.svg";
+import { ReactComponent as Message } from "../assets/message.svg";
+import { ReactComponent as LinkIcon } from "../assets/link.svg";
+import { ReactComponent as Unliked } from "../assets/unliked.svg";
+import { ReactComponent as Liked } from "../assets/liked.svg";
 import PropTypes from "prop-types";
 
 class Joke extends React.Component {
