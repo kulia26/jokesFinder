@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "04fd2175e755f3673884cb10d8c0971e",
+    "revision": "09e5c97f9c498e4b858d088fe8f5e0a8",
     "url": "https://kulia26.github.io/jokesFinder/index.html"
   },
   {
-    "revision": "7b2be8b16eef861913a8",
+    "revision": "962173a1b86c48fb8934",
     "url": "https://kulia26.github.io/jokesFinder/static/css/main.abd688f7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://kulia26.github.io/jokesFinder/static/js/2.1769b71f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7b2be8b16eef861913a8",
-    "url": "https://kulia26.github.io/jokesFinder/static/js/main.a4f7db32.chunk.js"
+    "revision": "962173a1b86c48fb8934",
+    "url": "https://kulia26.github.io/jokesFinder/static/js/main.6e700a34.chunk.js"
   },
   {
     "revision": "4826dbbd39107caf0775",

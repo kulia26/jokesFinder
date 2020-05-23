@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://kulia26.github.io/jokesFinder/precache-manifest.2f8979ff0f39bb8fb0cac458a228abbe.js"
+  "https://kulia26.github.io/jokesFinder/precache-manifest.47581d5f6ea5132fff65d65b3c1e4f99.js"
 );
 
 self.addEventListener('message', (event) => {
