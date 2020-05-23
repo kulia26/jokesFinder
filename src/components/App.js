@@ -29,19 +29,21 @@ class App extends React.Component {
         },
       });
       setTimeout(() => {
-        this.setState({
-          error: {
-            show: false,
-            message: this.state.error.message,
-          },
-        });
-        setTimeout(() => {
-          if (this.state.error) {
-            this.setState({
-              error: null,
-            });
-          }
-        }, 300);
+        if(this.state.error){
+          this.setState({
+            error: {
+              show: false,
+              message: this.state.error.message,
+            },
+          });
+          setTimeout(() => {
+            if (this.state.error) {
+              this.setState({
+                error: null,
+              });
+            }
+          }, 300);
+        }
       }, 3000);
     }
   }
