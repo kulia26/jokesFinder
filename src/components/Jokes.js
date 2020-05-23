@@ -2,22 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import Joke from "./Joke";
 
-class Jokes extends React.Component {
-  render() {
-    return (
-      <section>
-        {this.props.jokes.map((joke) => (
-          <Joke
-            key={joke.reactId}
-            addToFavourite={this.props.addToFavourite}
-            removeFromFavourite={this.props.removeFromFavourite}
-            isFavourite={this.props.isJokeFavourite(joke.id)}
-            {...joke}
-          ></Joke>
-        ))}
-      </section>
-    );
-  }
+function Jokes(props) {
+  return (
+    <section>
+      {props.jokes.map((joke) => (
+        <Joke
+          key={joke.reactId}
+          addToFavourite={props.addToFavourite}
+          removeFromFavourite={props.removeFromFavourite}
+          isFavourite={props.isJokeFavourite(joke.id)}
+          {...joke}
+        ></Joke>
+      ))}
+    </section>
+  );
 }
 
 Jokes.propTypes = {

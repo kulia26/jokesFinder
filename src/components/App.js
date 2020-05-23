@@ -29,7 +29,7 @@ class App extends React.Component {
         },
       });
       setTimeout(() => {
-        if(this.state.error){
+        if (this.state.error) {
           this.setState({
             error: {
               show: false,
@@ -212,7 +212,6 @@ class App extends React.Component {
           removeFromFavourite={this.removeFromFavourite}
           isJokeFavourite={this.isJokeFavourite}
         />
-        
       </div>
     );
   }
