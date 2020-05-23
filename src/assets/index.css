@@ -244,6 +244,7 @@ button.getJoke:active {
   opacity: 0;
   transform: scaleY(0.95);
   transition: max-height ease-out 0.55s, opacity 0.75s, transform 0.55s, margin-top 0.55s;
+  transition-timing-function: ease-in-out;
 }
 
 .wrap div.categories.show {
@@ -253,6 +254,7 @@ button.getJoke:active {
   opacity: 1;
   transform: scaleY(1);
   transition: max-height ease-in 0.55s, opacity 0.55s, transform 0.55s, margin-top 0.55s;
+  transition-timing-function: ease-in-out;
 }
 
 .wrap fieldset.categories div.categories label {
@@ -299,6 +301,7 @@ button.getJoke:active {
   display: block;
   margin-top: 20px;
   transition: max-height 0.75s, opacity 0.25s, transform 0.55s, margin-top 0.55s;
+  transition-timing-function: ease-in-out;
 }
 
 .wrap #search-field.hide {
@@ -364,7 +367,8 @@ main section article {
   padding-right: 5.88%;
   padding-bottom: 45px;
   transition: all 0.4s;
-  max-height: 600px;
+  transition-timing-function: ease-in-out;
+  max-height: 1000px;
 }
 
 
@@ -513,6 +517,7 @@ aside section article {
   margin: 0 8.33%;
   margin-bottom: 20px;
   transition: all 0.350s;
+  transition-timing-function: ease-in-out;
   opacity: 1;
   max-height: 300px;
 }
@@ -522,6 +527,7 @@ aside section article.hide {
   max-height: 0;
   overflow: hidden;
   transition: all 0.350s;
+  transition-timing-function: ease-in-out;
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0;
@@ -558,7 +564,7 @@ aside section article p {
   display: none
 }
 
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 991px) {
 
   /* blur */
   body::after {
@@ -741,16 +747,15 @@ aside section article p {
     padding-left: 24%;
     padding-right: 20px;
     padding-top: 47px;
-    padding-bottom: 0;
+    padding-bottom: 20px;
   }
 
   main section article mark {
-    left: 80px;
-    bottom: 20px;
-  }
-
-  section article p {
-    padding-bottom: 16px;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    left: 0;
+    bottom: 0;
   }
 
   section article .like {
@@ -762,13 +767,8 @@ aside section article p {
     min-width: 180px;
   }
 
-  aside section article p {
-    padding-bottom: 20px;
-    margin-bottom: 0;
-  }
-
   aside section article {
-    max-height: 600px;
+    max-height: 1000px;
   }
 
 }
