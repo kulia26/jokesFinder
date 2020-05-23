@@ -72,7 +72,7 @@ class Joke extends React.Component {
         </p>
 
         <mark className={this.hasCategory() ? "show" : "hide"}>
-          {this.props.categories[0]}
+          {this.hasCategory() ? this.props.categories[0] : ""}
         </mark>
       </article>
     );
