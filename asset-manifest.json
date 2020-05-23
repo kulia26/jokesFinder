@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "https://kulia26.github.io/jokesFinder/static/css/main.abd688f7.chunk.css",
-    "main.js": "https://kulia26.github.io/jokesFinder/static/js/main.d98e954b.chunk.js",
-    "main.js.map": "https://kulia26.github.io/jokesFinder/static/js/main.d98e954b.chunk.js.map",
+    "main.js": "https://kulia26.github.io/jokesFinder/static/js/main.a4f7db32.chunk.js",
+    "main.js.map": "https://kulia26.github.io/jokesFinder/static/js/main.a4f7db32.chunk.js.map",
     "runtime-main.js": "https://kulia26.github.io/jokesFinder/static/js/runtime-main.611179ff.js",
     "runtime-main.js.map": "https://kulia26.github.io/jokesFinder/static/js/runtime-main.611179ff.js.map",
     "static/js/2.1769b71f.chunk.js": "https://kulia26.github.io/jokesFinder/static/js/2.1769b71f.chunk.js",
     "static/js/2.1769b71f.chunk.js.map": "https://kulia26.github.io/jokesFinder/static/js/2.1769b71f.chunk.js.map",
     "index.html": "https://kulia26.github.io/jokesFinder/index.html",
-    "precache-manifest.4089014e39ed93026c81bc7e3ba1b52f.js": "https://kulia26.github.io/jokesFinder/precache-manifest.4089014e39ed93026c81bc7e3ba1b52f.js",
+    "precache-manifest.2f8979ff0f39bb8fb0cac458a228abbe.js": "https://kulia26.github.io/jokesFinder/precache-manifest.2f8979ff0f39bb8fb0cac458a228abbe.js",
     "service-worker.js": "https://kulia26.github.io/jokesFinder/service-worker.js",
     "static/css/main.abd688f7.chunk.css.map": "https://kulia26.github.io/jokesFinder/static/css/main.abd688f7.chunk.css.map",
     "static/js/2.1769b71f.chunk.js.LICENSE.txt": "https://kulia26.github.io/jokesFinder/static/js/2.1769b71f.chunk.js.LICENSE.txt",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.611179ff.js",
     "static/js/2.1769b71f.chunk.js",
     "static/css/main.abd688f7.chunk.css",
-    "static/js/main.d98e954b.chunk.js"
+    "static/js/main.a4f7db32.chunk.js"
   ]
 }
